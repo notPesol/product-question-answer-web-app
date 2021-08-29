@@ -1,0 +1,112 @@
+.hero-wrapper{
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(56, 56, 56);
+}
+
+.hero {
+  margin: 20px auto;
+  border-radius: 20px;
+  background-color: rgb(42, 42, 43);
+  width: 100%;
+  max-width: 1280px;
+  color: white;
+  display: flex;
+}
+
+.hero .img {
+  overflow: hidden;
+  border-radius: 20px;
+  max-width: 768px;
+}
+
+.hero .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero .detail {
+  margin: 40px;
+  width: 100%;
+}
+
+.hero .detail h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.question-form-wrapper {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(56, 56, 56);
+}
+
+.question-form {
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 20px;
+  background-color: rgb(42, 42, 43);
+  width: 100%;
+  max-width: 1280px;
+  color: white;
+}
+
+.question-form h2 {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question-form form {
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-input input:not([type = 'submit']) {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  text-align: center;
+  outline: none;
+}
+
+.form-input input[type = 'submit'] {
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  background-color: rgb(43, 42, 42);
+  border: 1px solid greenyellow;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .hero {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  .hero .detail {
+    margin: 20px 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="navbar-wrapper">
+  <nav class="navbar">
+      <div class="logo">
+        <span>Logo</span>
+      </div>
+      <ul class="nav-lists">
+        <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+      <% if(admin) { %>
+        <li class="nav-item dropdown-1">
+          <a href="#" class="nav-link" id="btn-toggle">Menu</a>
+          <div class="dropdown">
+            <a href="/add">Add Product</a>
+            <a href="/logout">Logout</a>
+          </div>
+        </li>
+      <% }else{%>
+        <li class="nav-item dropdown-1">
+          <a href="#" class="nav-link" id="btn-toggle">Admin</a>
+          <div class="dropdown">
+            <a href="/login">Login</a>
+          </div>
+        </li>
+      <% } %> 
+        <!-- user -->
+        <li class="nav-item dropdown-1">
+          <a href="#" id="btn-user-toggle" class="nav-link">User</a>
+          <div class="dropdown-menu">
+          <% if(user) {%>
+            <a href="/userlogout">Logout</a>
+          <% }else {%>
+            <a href="/userlogin">Login</a>
+            <a href="/register">Register</a>
+          <% } %>
+          </div>
+        </li>
+    </ul>
+  </nav>
+</div>
+
+<script src="javascript/dropdown.js"></script>

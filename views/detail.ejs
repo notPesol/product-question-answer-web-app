@@ -1,0 +1,38 @@
+<% layout('layout') -%>
+<% block('head').append('<link rel="stylesheet" href="stylesheet/detail.css">') %> 
+<div class="hero-wrapper">
+  <div class="hero">
+    <div class="img">
+      <img src="<%= product.img %>" alt="">
+    </div>
+    <div class="detail">
+      <h2><%= product.name %></h2>
+      <p><%= product.detail %></p>
+    </div>
+  </div>
+</div>
+<% if (user) { %>
+  <div class="question-form-wrapper">
+    <div class="question-form">
+      <h2>for ask question</h2>
+      <% if (success) {%>
+        <div style="text-align: center;" class="form-input">
+          <span style="color: green;"><%= success %></span> 
+        </div>
+      <% } %> 
+      <% if (error) {%>
+        <div style="text-align: center;" class="form-input">
+          <span style="color: red;"><%= error %></span> 
+        </div>
+      <% } %> 
+      <form action="/question/<%= product._id %>" method="post">
+        <div class="form-input">
+          <input name="question" type="text" placeholder="Question">
+        </div>
+        <div class="form-input">
+          <input type="submit" value="Send Question">
+        </div>
+      </form>
+    </div>
+  </div>
+<% } %>

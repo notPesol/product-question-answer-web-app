@@ -1,0 +1,28 @@
+<% layout('layout') -%>
+<% if(success) {%> 
+  <p style="text-align: center; color: green;"><%= success %></p> 
+<% } %>
+<% if(error) {%> 
+  <p style="text-align: center; color: red;"><%= error %></p> 
+<% } %>
+
+<div class="grid-wrapper">
+  <h1>Products</h1>
+  <% if(products.length > 0) {%>
+    <div class="grid">
+    <% for(product of products) {%>
+      <div class="grid-item">
+        <div class="img-wrapper">
+          <a href="/<%= product._id %>"><img src="<%= product.img %>" alt=""></a>
+        </div>
+        <div class="text-wrapper">
+          <h3><%= (product.name) %></h3>
+          <p><%= product.detail %> </p>
+        </div>
+      </div>
+    <% } %> 
+  <% }else { %>
+    <h2>No product to show</h2>
+  <% } %>  
+  </div>
+</div>
