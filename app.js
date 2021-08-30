@@ -12,14 +12,14 @@ const ejsMateEngine = require('ejs-mate');
 const flash = require('connect-flash');
 
 // connect database // check type file
-const { conDB, uploadFile } = require('./utils');
+const { conDB } = require('./utils');
 
 // Auth middleware
 const { adminLogin, isAdmin } = require('./controller/admin');
 
 // Controller
 const { register, userLogin } = require('./controller/user');
-const { getProduct } = require('./controller/product');
+const { getProduct, uploadFile } = require('./controller/product');
 const { addQuestion } = require('./controller/question')
 
 // hashing function
@@ -27,8 +27,7 @@ const bcrypt = require('bcrypt');
 
 // Models
 const Product = require('./Models/Product');
-const User = require('./Models/User');
-const Question = require('./Models/Question');
+
 
 // connect to database
 conDB();

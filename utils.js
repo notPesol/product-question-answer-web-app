@@ -72,9 +72,6 @@ const uploadFile = async (req, res, next) => {
   });
 };
 
-
 module.exports = {
   conDB,
-  isFileValid,
-  uploadFile
 };
