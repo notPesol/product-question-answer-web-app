@@ -21,7 +21,7 @@ const userLogin = async (req, res) => {
     if (user) {
       const isTruePassword = await bcrypt.compare(password, user.password);
       if (isTruePassword) {
-        req.session.user = user;
+        req.session.userId = user._id;
         req.flash('success', `Welcome back ${user.username}`);
         return res.redirect('/');
       }

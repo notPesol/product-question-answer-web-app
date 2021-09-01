@@ -11,11 +11,14 @@
   <link rel="stylesheet" href="stylesheet/index.css">
   <link rel="stylesheet" href="stylesheet/navbar.css">
   <%- block('head').toString() %>
+  
 </head>
 
 <body>
   <%- partial('partials/navbar') -%>
     <%- body -%>
+
+  <%- block('footer').toString() %>
 </body>
 
 </html>

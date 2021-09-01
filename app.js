@@ -20,14 +20,11 @@ const { adminLogin, isAdmin } = require('./controller/admin');
 // Controller
 const { register, userLogin } = require('./controller/user');
 const { getProduct, uploadFile } = require('./controller/product');
-const { addQuestion } = require('./controller/question')
-
-// hashing function
-const bcrypt = require('bcrypt');
+const { addQuestion, repliedQuestion, deleteQuestion } = require('./controller/question')
 
 // Models
 const Product = require('./Models/Product');
-
+const Question = require('./Models/Question');
 
 // connect to database
 conDB();
@@ -53,7 +50,7 @@ const title = 'Products';
 
 app.use((req, res, next) => {
   res.locals.admin = req.session.admin;
-  res.locals.user = req.session.user;
+  res.locals.userId = req.session.userId;
   next();
 });
 
@@ -103,6 +100,9 @@ app.post('/login', adminLogin, (req, res) => {
 
 app.post('/question/:productId', addQuestion);
 
+app.post('/answer/:questionId', isAdmin, repliedQuestion);
+
+app.post('/delete/:questionId', isAdmin, deleteQuestion);
 
 
 
