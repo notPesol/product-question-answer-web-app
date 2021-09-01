@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 require('dotenv').config()
 
-const USERNAME = process.env.USERNAME;
-const PASSWORD = process.env.PASSWORD;
+const MONGO_USERNAME = process.env.MONGO_USERNAME;
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 
 function conDB() {
-  mongoose.connect(`mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.dshvc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+  mongoose.connect(`mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.dshvc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
     .then(_ => {
       console.log('database connected');
     })
