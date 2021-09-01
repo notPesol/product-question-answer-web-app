@@ -2,9 +2,11 @@
 <% block('head').append('<link rel="stylesheet" href="stylesheet/detail.css">') %> 
 <div class="hero-wrapper">
   <div class="hero">
-    <div class="img">
-      <img src="<%= product.img %>" alt="">
-    </div>
+    <% if(product.img) {%> 
+      <div class="img">
+        <img src="<%= product.img %>" alt="">
+      </div>
+    <% } %> 
     <div class="detail">
       <h2><%= product.name %></h2>
       <p><%= product.detail %></p>

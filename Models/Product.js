@@ -12,7 +12,6 @@ const productSchema = new Schema({
   },
   img: {
     type: String,
-    required: true
   },
   questions: {
     type: [Schema.Types.ObjectId],

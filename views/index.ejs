@@ -12,9 +12,11 @@
     <div class="grid">
     <% for(product of products) {%>
       <div class="grid-item">
-        <div class="img-wrapper">
-          <a href="/<%= product._id %>"><img src="<%= product.img %>" alt=""></a>
-        </div>
+        <% if(product.img) {%> 
+          <div class="img-wrapper">
+            <a href="/<%= product._id %>"><img src="<%= product.img %>" alt=""></a>
+          </div>
+        <% } %> 
         <div class="text-wrapper">
           <h3><%= (product.name) %></h3>
           <p><%= product.detail %> </p>
